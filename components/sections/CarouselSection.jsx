@@ -3,15 +3,15 @@ import { Carousel } from "flowbite-react";
 import ButtonPrimary from "../ui/ButtonPrimary";
 import ButtonSecondary from "../ui/ButtonSecondary";
 import Image from "next/image";
-import Image1 from "../../public/images/static/image1.webp";
-import Image2 from "../../public/images/static/image2.webp";
-import Image3 from "../../public/images/static/image3.webp";
+import Hero1 from "../../public/images/static/hero1_compressed.webp";
+import Hero2 from "../../public/images/static/hero2_compressed.webp";
+import Hero3 from "../../public/images/static/hero3_compressed.webp";
 
 const CarouselSection = () => {
-  const images = [Image1, Image2, Image3];
+  const images = [Hero1, Hero2, Hero3];
 
   return (
-    <div className="relative h-[95vh] md:h-[700px] w-full overflow-hidden flex justify-center items-center">
+    <section className="relative h-[95vh] md:h-[700px] w-full overflow-hidden flex justify-center items-center">
       <Carousel
         indicators={false}
         leftControl="."
@@ -40,12 +40,12 @@ const CarouselSection = () => {
             Kelompok Wanita Tani Kuntani
           </span>
         </h1>
-        <div className="flex flex-row gap-4 mx-auto">
+        <div className="flex flex-row gap-4 mx-auto flex-wrap justify-center">
           <ButtonPrimary />
           <ButtonSecondary />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

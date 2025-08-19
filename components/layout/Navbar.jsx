@@ -20,7 +20,7 @@ const Navbar = () => {
           </a>
         </li>
         <li>
-          <a href="" className="hover:underline">
+          <a href="#tentang" className="hover:underline">
             Tentang
           </a>
         </li>
@@ -51,7 +51,7 @@ const Navbar = () => {
             <a href="/" className="hover:underline">Beranda</a>
           </li>
           <li className="py-4 px-6 border-b border-white">
-            <a href="" className="hover:underline">Tentang</a>
+            <a href="#tentang" className="hover:underline">Tentang</a>
           </li>
           <li className="py-4 px-6 border-b border-white">
             <a href="" className="hover:underline">Produk</a>
