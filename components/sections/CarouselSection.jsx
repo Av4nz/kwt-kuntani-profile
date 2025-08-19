@@ -3,9 +3,9 @@ import { Carousel } from "flowbite-react";
 import ButtonPrimary from "../ui/ButtonPrimary";
 import ButtonSecondary from "../ui/ButtonSecondary";
 import Image from "next/image";
-import Hero1 from "../../public/images/static/hero1_compressed.webp";
-import Hero2 from "../../public/images/static/hero2_compressed.webp";
-import Hero3 from "../../public/images/static/hero3_compressed.webp";
+import Hero1 from "../../public/images/static/hero/hero1_compressed.webp";
+import Hero2 from "../../public/images/static/hero/hero2_compressed.webp";
+import Hero3 from "../../public/images/static/hero/hero3_compressed.webp";
 
 const CarouselSection = () => {
   const images = [Hero1, Hero2, Hero3];

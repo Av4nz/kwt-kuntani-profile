@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import PengurusSubSection from "./PengurusSubSection";
-import Image1 from "../../public/images/static/hero1_compressed.webp";
+import Image1 from "../../public/images/static/hero/hero1_compressed.webp";
 
 const TentangSection = () => {
   return (
@@ -15,6 +15,7 @@ const TentangSection = () => {
             <Image
               src={Image1}
               className="w-full h-full bg-center bg-cover object-cover object-center"
+              
             />
           </div>
           <div className="md:flex md:flex-col">
