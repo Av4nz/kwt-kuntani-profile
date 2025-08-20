@@ -3,7 +3,7 @@ import Image from "next/image";
 import PengurusSubSection from "./PengurusSubSection";
 import Image1 from "../../public/images/static/hero/hero1_compressed.webp";
 
-const TentangSection = () => {
+const TentangSection = ({ pengurusList }) => {
   return (
     <section id="tentang" className="py-20 px-4 lg:px-16 bg-white">
       <div className="max-w-[1240px] mx-auto">
@@ -15,7 +15,6 @@ const TentangSection = () => {
             <Image
               src={Image1}
               className="w-full h-full bg-center bg-cover object-cover object-center"
-              
             />
           </div>
           <div className="md:flex md:flex-col">
@@ -32,7 +31,7 @@ const TentangSection = () => {
             </p>
           </div>
         </div>
-        <PengurusSubSection />
+        <PengurusSubSection pengurusList={pengurusList} />
       </div>
     </section>
   );

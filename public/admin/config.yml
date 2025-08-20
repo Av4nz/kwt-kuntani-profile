@@ -1,9 +1,10 @@
 backend:
   name: git-gateway
   branch: main
+  local_backend: true
 
-media_folder: "public/images"
-public_folder: "/images"
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "kegiatan"
@@ -11,8 +12,41 @@ collections:
     folder: "contents/kegiatan"
     create: true
     slug: "{{slug}}"
+    preview_path: "kegiatan/{{slug}}"
+    sort: "date:desc"
     fields:
-      - { label: "Judul", name: "title", widget: "string" }
-      - { label: "Tanggal", name: "date", widget: "datetime" }
-      - { label: "Thumbnail", name: "thumbnail", widget: "image" }
-      - { label: "Isi", name: "body", widget: "markdown" }
+      - { label: "Judul", name: "title", widget: "string", required: true }
+      - { label: "Tanggal", name: "date", widget: "datetime", required: true }
+      - {
+          label: "Thumbnail",
+          name: "thumbnail",
+          widget: "image",
+          required: true,
+        }
+      - { label: "Isi", name: "body", widget: "markdown", required: true }
+
+  - name: "pengurus"
+    label: "Pengurus"
+    files:
+      - file: "contents/pengurus/ketua.md"
+        label: "Ketua"
+        name: "ketua"
+        fields:
+          - { label: "Nama", name: "nama", widget: "string", required: true }
+          - { label: "Posisi", name: "posisi", widget: "string", required: true }
+          - { label: "Foto", name: "foto", widget: "image", required: true }
+      - file: "contents/pengurus/sekretaris.md"
+        label: "Sekretaris"
+        name: "sekretaris"
+        fields:
+          - { label: "Nama", name: "nama", widget: "string", required: true }
+          - { label: "Posisi", name: "posisi", widget: "string", required: true }
+          - { label: "Foto", name: "foto", widget: "image", required: true }
+      - file: "contents/pengurus/bendahara.md"
+        label: "Bendahara"
+        name: "bendahara"
+        fields:
+          - { label: "Nama", name: "nama", widget: "string", required: true }
+          - { label: "Posisi", name: "posisi", widget: "string", required: true }
+          - { label: "Foto", name: "foto", widget: "image", required: true }
+
