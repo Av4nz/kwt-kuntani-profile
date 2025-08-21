@@ -1,10 +1,58 @@
 import React, { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { Link as ScrollLink } from "react-scroll";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-
+  const router = useRouter();
   const toggleNav = () => setNav(!nav);
+
+  const menuItems = [
+    { title: "Beranda", to: "home", path: "/" },
+    { title: "tentang", to: "tentang", path: "/#tentang" },
+    { title: "Produk", to: "produk", path: "/#produk" },
+    { title: "Kegiatan", to: "kegiatan", path: "/#kegiatan" },
+    { title: "Kontak", to: "kontak", path: "/#kontak" },
+  ];
+
+  const handleClick = (to, path) => {
+    setNav(false);
+    if (router.pathname !== "/") {
+      router.push(path);
+    } else if (to) {
+      document.getElementById(to).scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const renderNavLink = (item) => {
+    if (router.pathname === "/" && item.to) {
+      return (
+        <ScrollLink
+          to={item.to}
+          spy={true}
+          smooth={true}
+          duration={500}
+          className="hover:underline cursor-pointer"
+          onClick={() => setNav(false)}
+        >
+          {item.title}
+        </ScrollLink>
+      );
+    }
+
+    return (
+      <Link
+        href={item.path}
+        className="hover:underline"
+        onClick={() => handleClick(item.to, item.path)}
+      >
+        {item.title}
+      </Link>
+    );
+  };
+
   return (
     <nav className="text-white">
       <ul
@@ -14,54 +62,33 @@ const Navbar = () => {
             : "hidden md:flex space-x-6 justify-between"
         }
       >
-        <li>
-          <a href="/" className="hover:underline">
-            Beranda
-          </a>
-        </li>
-        <li>
-          <a href="#tentang" className="hover:underline">
-            Tentang
-          </a>
-        </li>
-        <li>
-          <a href="" className="hover:underline">
-            Produk
-          </a>
-        </li>
-        <li>
-          <a href="" className="hover:underline">
-            Kegiatan
-          </a>
-        </li>
-        <li>
-          <a href="" className="hover:underline">
-            Kontak
-          </a>
-        </li>
+        {menuItems.map((item, index) => (
+          <li key={index} className="cursor-pointer">
+            {renderNavLink(item)}
+          </li>
+        ))}
       </ul>
+
       <div className="md:hidden flex items-center" onClick={toggleNav}>
         <button className="cursor-pointer">
           {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
         </button>
       </div>
-      <div className={`md:hidden fixed left-0 w-full transition-all duration-500 ease-in-out ${nav ? 'top-[60px] opacity-100' : 'top-[-100%] opacity-0'}`}>
+
+      <div
+        className={`md:hidden fixed left-0 w-full transition-all duration-500 ease-in-out ${
+          nav ? "top-[60px] opacity-100" : "top-[-100%] opacity-0"
+        } `}
+      >
         <ul className="bg-primary-700 text-white">
-          <li className="py-4 px-6 border-b border-white">
-            <a href="/" className="hover:underline">Beranda</a>
-          </li>
-          <li className="py-4 px-6 border-b border-white">
-            <a href="#tentang" className="hover:underline">Tentang</a>
-          </li>
-          <li className="py-4 px-6 border-b border-white">
-            <a href="" className="hover:underline">Produk</a>
-          </li>
-          <li className="py-4 px-6 border-b border-white">
-            <a href="" className="hover:underline">Kegiatan</a>
-          </li>
-          <li className="py-4 px-6">
-            <a href="" className="hover:underline">Kontak</a>
-          </li>
+          {menuItems.map((item, index) => (
+            <li
+              key={index}
+              className="py-4 px-6 border-b border-white last:border-b-0"
+            >
+              {renderNavLink(item)}
+            </li>
+          ))}
         </ul>
       </div>
     </nav>

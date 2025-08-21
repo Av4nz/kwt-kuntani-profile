@@ -11,7 +11,7 @@ const CarouselSection = () => {
   const images = [Hero1, Hero2, Hero3];
 
   return (
-    <section className="relative h-[95vh] md:h-[700px] w-full overflow-hidden flex justify-center items-center">
+    <section className="relative h-[calc(100vh-60px)] md:h-[700px] w-full overflow-hidden flex justify-center items-center">
       <Carousel
         indicators={false}
         leftControl="."
@@ -32,7 +32,7 @@ const CarouselSection = () => {
         ))}
       </Carousel>
       <div className="absolute w-full h-full bg-black/60" />
-      <div className="absolute max-w-[1240px] h-full flex items-center justify-center flex-col z-5 text-white">
+      <div className="absolute max-w-[1240px] h-full flex items-center justify-center flex-col z-1 text-white">
         <h1 className="text-center mb-6">
           <span className="text-4xl md:text-6xl font-bold">KWT Kuntani</span>
           <br />
@@ -41,8 +41,8 @@ const CarouselSection = () => {
           </span>
         </h1>
         <div className="flex flex-row gap-4 mx-auto flex-wrap justify-center">
-          <ButtonPrimary />
-          <ButtonSecondary />
+          <ButtonPrimary label={"Lihat Produk"} to={"produk"} />
+          <ButtonSecondary label={"Kegiatan"} to={"kegiatan"}/>
         </div>
       </div>
     </section>

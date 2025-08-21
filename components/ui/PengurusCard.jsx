@@ -12,11 +12,11 @@ const PengurusCard = ({ image, nama, posisi }) => {
         className="w-full h-full bg-center bg-cover object-cover object-center"
       />
       <div className="absolute w-full bg-linear-to-t from-black to-transparent bottom-0 left-0 h-[40%]" />
-      <div>
-        <h4 className="absolute bottom-8 left-6 text-white font-semibold text-2xl mb-2">
+      <div className="absolute bottom-0 left-0 w-full h-[40%] flex flex-col justify-end p-6">
+        <h4 className="text-white font-semibold text-2xl">
           {nama || "Nama Pengurus"}
         </h4>
-        <p className="absolute bottom-4 left-6 text-white font-light text-lg">
+        <p className="text-white font-light text-lg">
           {posisi || "Posisi Pengurus"}
         </p>
       </div>

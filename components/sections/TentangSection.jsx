@@ -14,6 +14,7 @@ const TentangSection = ({ pengurusList }) => {
           <div className="relative rounded-2xl w-full max-h-[400px] overflow-hidden">
             <Image
               src={Image1}
+              alt="Tentang KWT Kuntani"
               className="w-full h-full bg-center bg-cover object-cover object-center"
             />
           </div>

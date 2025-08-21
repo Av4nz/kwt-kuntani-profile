@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full text-white  mt-auto ">
+    <footer id="kontak" className="w-full text-white  mt-auto ">
       <div className="bg-primary-700 p-4">
         <div className="max-w-[1240px] flex flex-col md:flex-row gap-8 md:gap-0 mx-auto">
           <div className="w-full md:max-h-[400px]">

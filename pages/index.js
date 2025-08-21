@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { getPengurus } from "../lib/pengurus";
 import CarouselSection from "@/components/sections/CarouselSection";
 import TentangSection from "@/components/sections/TentangSection";
@@ -17,7 +16,7 @@ export async function getStaticProps() {
 
 export default function Home({ pengurusList }) {
   return (
-    <div className=" text-black">
+    <div className="text-black">
       <CarouselSection />
       <TentangSection pengurusList={pengurusList} />
       <ProdukSection />
