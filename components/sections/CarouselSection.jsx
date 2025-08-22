@@ -40,8 +40,8 @@ const CarouselSection = () => {
             Kelompok Wanita Tani Kuntani
           </span>
         </h1>
-        <div className="flex flex-row gap-4 mx-auto flex-wrap justify-center">
-          <ButtonPrimary label={"Lihat Produk"} to={"produk"} />
+        <div className="flex flex-row gap-4 mx-auto flex-wrap justify-center items-center">
+          <ButtonPrimary label={"Lihat Produk"} toSection={"produk"} />
           <ButtonSecondary label={"Kegiatan"} to={"kegiatan"}/>
         </div>
       </div>

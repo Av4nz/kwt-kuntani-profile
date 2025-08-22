@@ -1,5 +1,11 @@
 import React from "react";
-import { Carousel } from "flowbite-react";
+import ButtonPrimary from "../ui/ButtonPrimary";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 import ProductCard from "../ui/ProductCard";
 import Image1 from "@/public/images/static/produk/produk_kangkung.webp";
 import Image2 from "@/public/images/static/produk/produk_kacang_panjang.webp";
@@ -23,45 +29,46 @@ const ProdukSection = () => {
           Produk
         </h2>
 
-        <div className="md:hidden">
-          <div className="h-[550px]">
-            <Carousel 
-              slide={false}
-              indicators={true}
-              leftControl={
-                <button className="flex items-center justify-center w-10 h-10 bg-white/80 hover:bg-white rounded-full shadow-md">
-                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-              }
-              rightControl={
-                <button className="flex items-center justify-center w-10 h-10 bg-white/80 hover:bg-white rounded-full shadow-md">
-                  <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              }
-            >
-              {products.map((product, index) => {
-                return (
-                  <div
-                    key={`slide-${product.productName}-${index}`}
-                    className="flex justify-center items-center h-full px-4"
-                  >
-                    <div className="w-full max-w-sm mx-auto">
-                      <ProductCard
-                        image={product.image}
-                        productName={product.productName}
-                      />
-                    </div>
-                  </div>
-                );
-              })}
-            </Carousel>
-          </div>
-        </div>
+        <Swiper
+          modules={[Navigation, Pagination, A11y]}
+          spaceBetween={30}
+          navigation
+          pagination={{ clickable: true }}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
 
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 30,
+            },
+          }}
+          className="produk-swiper"
+        >
+          {products.map((product, index) => (
+            <SwiperSlide key={index} className="pb-12">
+              <ProductCard
+                image={product.image}
+                productName={product.productName}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+      <div className="text-center mt-8">
+        <ButtonPrimary label={"Pesan Sekarang"}></ButtonPrimary>
       </div>
     </section>
   );

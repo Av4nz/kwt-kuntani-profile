@@ -39,3 +39,40 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif, var(--font-poppins);
 }
+
+.produk-swiper .swiper-button-next,
+.produk-swiper .swiper-button-prev {
+  color: white;
+  width: 40px;  
+  height: 40px; 
+  background-color: black; 
+  border-radius: 50%; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+.produk-swiper .swiper-button-next::after,
+.produk-swiper .swiper-button-prev::after {
+  font-size: 20px; 
+  font-weight: bold;
+}
+
+.produk-swiper .swiper-pagination-bullet {
+  background: #00b800;
+  width: 10px;  
+  height: 10px; 
+  opacity: 0.5;
+}
+
+.produk-swiper .swiper-pagination-bullet-active {
+  background: #00b800;
+  opacity: 1;
+  width: 24px; 
+  border-radius: 4px; 
+  transition: width 0.3s ease; 
+}
+.produk-swiper .swiper-button-next:hover,
+.produk-swiper .swiper-button-prev:hover {
+  background-color: #353535;
+  color: white;
+  transition: all 0.3s ease;
+}
