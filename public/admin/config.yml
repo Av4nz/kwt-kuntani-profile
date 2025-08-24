@@ -17,8 +17,8 @@ collections:
       - { label: "Judul", name: "title", widget: "string", required: true }
       - { label: "Tanggal", name: "date", widget: "datetime", time_format: false, required: true }
       - {
-          label: "Thumbnail",
-          name: "thumbnail",
+          label: "Gambar",
+          name: "image",
           widget: "image",
           required: true,
         }
