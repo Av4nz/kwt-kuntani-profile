@@ -5,4 +5,10 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
+module.exports = {
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
+};
+
 export default withFlowbiteReact(nextConfig);

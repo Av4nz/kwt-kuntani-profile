@@ -6,11 +6,11 @@ import html from "remark-html";
 import Image from "next/image";
 
 export async function getStaticPaths() {
-    const files = fs.readdirSync("contents/kegiatan")
-    const paths = files.map((filename) => ({
-        params: { slug: filename.replace(".md", "")},
-    }))
-    return { paths, fallback: false }
+  const files = fs.readdirSync("contents/kegiatan");
+  const paths = files.map((filename) => ({
+    params: { slug: filename.replace(".md", "") },
+  }));
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
@@ -22,7 +22,11 @@ export async function getStaticProps({ params }) {
     props: {
       frontmatter: {
         ...data,
-        date: new Date(data.date).toISOString(),
+        date: new Date(data.date).toLocaleDateString("id-ID", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        }),
       },
       content: processedContent.toString(),
     },
@@ -37,6 +41,8 @@ export default function Kegiatan({ frontmatter, content }) {
       <Image
         src={frontmatter.thumbnail}
         alt={frontmatter.title}
+        width={800}
+        height={400}
         className="my-4"
       />
       <div dangerouslySetInnerHTML={{ __html: content }} />
