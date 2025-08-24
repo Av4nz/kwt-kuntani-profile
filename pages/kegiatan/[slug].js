@@ -39,7 +39,7 @@ export default function Kegiatan({ frontmatter, content }) {
       <h1 className="text-2xl font-bold">{frontmatter.title}</h1>
       <p className="text-sm text-gray-600">{frontmatter.date}</p>
       <Image
-        src={frontmatter.thumbnail}
+        src={frontmatter.image}
         alt={frontmatter.title}
         width={800}
         height={400}
