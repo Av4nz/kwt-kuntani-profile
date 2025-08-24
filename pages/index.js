@@ -18,6 +18,7 @@ export async function getStaticProps() {
           year: "numeric",
         })
       : null,
+      image: item.image || null,
   }));
 
 
