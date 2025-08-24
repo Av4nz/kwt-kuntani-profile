@@ -3,10 +3,10 @@ backend:
   branch: main
 
 media_library:
-  name: "cloudinary"
+  name: cloudinary
   config:
-    cloud_name: "dhuzzgcgt"
-    api_key: "853134381385575"
+    cloud_name: dhuzzgcgt
+    api_key: 853134381385575
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
