@@ -15,7 +15,7 @@ collections:
     sort: "date:desc"
     fields:
       - { label: "Judul", name: "title", widget: "string", required: true }
-      - { label: "Tanggal", name: "date", widget: "datetime", required: true }
+      - { label: "Tanggal", name: "date", widget: "date", required: true }
       - {
           label: "Thumbnail",
           name: "thumbnail",
