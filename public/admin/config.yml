@@ -11,8 +11,8 @@ collections:
     label: "Kegiatan"
     folder: "contents/kegiatan"
     create: true
-    slug: "{{slug}}"
-    preview_path: "kegiatan/{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "/kegiatan/{{slug}}"
     sort: "date:desc"
     fields:
       - { label: "Judul", name: "title", widget: "string", required: true }

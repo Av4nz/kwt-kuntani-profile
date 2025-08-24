@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { Children } from 'react'
+import Image from 'next/image';
 
-const KegiatanMiniCard = ({ image, title, date }) => {
+const KegiatanMiniCard = ({ image, children }) => {
+  const title = Children.toArray(children)[0];
+  const date = Children.toArray(children)[1];
   return (
     <div
-      className={`bg-white shadow rounded-2xl w-full h-[5rem] sm:h-[5rem] lg:h-[5rem] relative overflow-hidden flex`}
+      className={`bg-white shadow-md rounded-2xl w-full h-[10rem] sm:h-[10rem] lg:h-[10rem] relative overflow-hidden flex`}
     >
-      <div className="bg-gray-100 shadow rounded-2xl w-[30%] h-full relative overflow-hidden">
-        <img
+      <div className="w-[40%] h-full">
+        <Image
           src={image}
           alt={title}
+          width={500}
+          height={500}
           className="w-full h-full bg-center bg-cover object-cover object-center"
           onError={(e) => {
             e.target.src =
@@ -17,11 +22,11 @@ const KegiatanMiniCard = ({ image, title, date }) => {
         />
       </div>
 
-      <div className="flex-1 flex flex-col justify-center px-4">
-        <h4 className="text-black font-semibold text-sm sm:text-base lg:text-lg mb-1">
+      <div className="flex-1 flex flex-col justify-between p-4">
+        <h4 className="text-black font-semibold text-lg lg:text-xl mb-1 line-clamp-3">
           {title || "Nama Kegiatan"}
         </h4>
-        <p className="text-gray-600 text-xs sm:text-sm lg:text-sm">
+        <p className="text-gray-600 text-sm md:text-base lg:text-lg text-end text-nowrap">
           {date || "Tanggal Kegiatan"}
         </p>
       </div>

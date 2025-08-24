@@ -68,7 +68,7 @@ const ProdukSection = () => {
         </Swiper>
       </div>
       <div className="text-center mt-8">
-        <ButtonPrimary label={"Pesan Sekarang"}></ButtonPrimary>
+        <ButtonPrimary label={"Pesan Sekarang"} url="https://wa.me/6282314954133"></ButtonPrimary>
       </div>
     </section>
   );

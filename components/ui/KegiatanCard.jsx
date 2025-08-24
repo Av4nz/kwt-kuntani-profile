@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import Image1 from "../../public/images/static/kegiatan/kegiatan1.webp";
 
-const KegiatanCard = () => {
+const KegiatanCard = ({ image, children }) => {
+  const [title, date, description] = React.Children.toArray(children);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -13,29 +14,28 @@ const KegiatanCard = () => {
       >
         <div className="w-full h-[60%]">
           <Image
-            src={Image1}
+            src={image}
             width={500}
             height={500}
             className="w-full h-full bg-center bg-cover object-cover object-center"
+            onError={(e) => {
+              e.target.src =
+                "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='80' viewBox='0 0 120 80'%3E%3Crect width='120' height='80' fill='%2387ceeb'/%3E%3Cg fill='%23228b22'%3E%3Crect x='20' y='50' width='8' height='30'/%3E%3Crect x='35' y='40' width='8' height='40'/%3E%3Crect x='50' y='45' width='8' height='35'/%3E%3Crect x='65' y='35' width='8' height='45'/%3E%3Crect x='80' y='50' width='8' height='30'/%3E%3Ccircle cx='60' cy='25' r='8' fill='%23ffd700'/%3E%3Cpath d='M10 65 Q30 55 50 65 Q70 75 90 65 Q100 60 110 65 v15 H10 z' fill='%23228b22'/%3E%3C/g%3E%3C/svg%3E";
+            }}
           />
         </div>
         <div className="bg-white w-full h-[40%] p-4 flex flex-col">
           <div className="flex justify-between gap-2">
             <h4 className="text-black font-semibold text-2xl mb-2 line-clamp-2">
-              Judul Kegiatan ini adalah sebagai berikut ini
+              {title || "Judul Kegiatan"}
             </h4>
             <span className="text-slate-700 font-light items-end text-nowrap shrink-0">
-              <p>17 Agustus 2025</p>
+              <p>{date || "DD Month YYYY"}</p>
             </span>
           </div>
 
           <p className="text-slate-800 font-light text-lg line-clamp-3 sm:line-clamp-2">
-            Deskripsi singkat mengenai kegiatan yang dilakukan. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit
-            amet consectetur, adipisicing elit. Reprehenderit, aperiam! Lorem
-            ipsum, dolor sit amet consectetur adipisicing elit. Aliquam maiores
-            esse neque saepe itaque delectus dolore quae pariatur harum
-            blanditiis.
+            {description || "Deskripsi singkat kegiatan..."}
           </p>
         </div>
       </div>
@@ -43,13 +43,13 @@ const KegiatanCard = () => {
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 bg-white p-4 border-b flex justify-between items-center z-5">
-              <h3 className="text-2xl font-semibold">
-                Judul Kegiatan ini adalah sebagai berikut ini halo ini saya
+            <div className="sticky top-0 bg-primary-700 p-4 border-b flex justify-between items-center z-5">
+              <h3 className="text-2xl font-semibold text-white">
+                {title || "Judul Kegiatan"}
               </h3>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="text-gray-500 hover:text-gray-700"
+                className="text-white hover:text-black"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -71,22 +71,21 @@ const KegiatanCard = () => {
             <div className="p-4">
               <div className="relative h-96 mb-4">
                 <Image
-                  src={Image1}
+                  src={image}
                   fill
                   className="object-cover object-center rounded-lg"
                   alt="Kegiatan"
+                  onError={(e) => {
+                    e.target.src =
+                      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='80' viewBox='0 0 120 80'%3E%3Crect width='120' height='80' fill='%2387ceeb'/%3E%3Cg fill='%23228b22'%3E%3Crect x='20' y='50' width='8' height='30'/%3E%3Crect x='35' y='40' width='8' height='40'/%3E%3Crect x='50' y='45' width='8' height='35'/%3E%3Crect x='65' y='35' width='8' height='45'/%3E%3Crect x='80' y='50' width='8' height='30'/%3E%3Ccircle cx='60' cy='25' r='8' fill='%23ffd700'/%3E%3Cpath d='M10 65 Q30 55 50 65 Q70 75 90 65 Q100 60 110 65 v15 H10 z' fill='%23228b22'/%3E%3C/g%3E%3C/svg%3E";
+                  }}
                 />
               </div>
-              <div className="text-gray-600 mb-4">17 Agustus 2025</div>
+              <div className="text-gray-600 mb-4">
+                {date || "DD Month YYYY"}
+              </div>
               <div className="prose max-w-none">
-                <p>
-                  Deskripsi lengkap mengenai kegiatan yang dilakukan. Lorem
-                  ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-                  dolor sit amet consectetur, adipisicing elit. Reprehenderit,
-                  aperiam! Lorem ipsum, dolor sit amet consectetur adipisicing
-                  elit. Aliquam maiores esse neque saepe itaque delectus dolore
-                  quae pariatur harum blanditiis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, porro culpa? At repudiandae quisquam deleniti, ipsa laboriosam temporibus beatae eaque corrupti neque dolorum ab illum. Obcaecati, corrupti ratione, nam provident a debitis nesciunt voluptates autem, ad labore iste eius beatae impedit vero odit? Ipsam <br />fugit excepturi voluptates quia minima ab nulla ullam quam iure, fuga ipsum architecto eius. Velit, tempore vel ratione tempora atque deserunt sit enim, laudantium asperiores amet rem quaerat! Rem? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis expedita impedit voluptatem quos ducimus cupiditate id tenetur, aperiam ad natus ut vel libero voluptate incidunt dolor totam veniam dolorem voluptatum. Nihil nam iure sequi praesentium facilis laudantium? Est, perferendis quasi accusamus quod ab voluptatum quae, magni quos, id eius repellat ea dolorum tempore fuga cumque earum. Deserunt dolor optio necessitatibus sunt vero, mollitia iure, quasi ea exercitationem saepe amet quibusdam odit officia voluptatum qui corrupti repellendus maiores soluta sed provident facilis accusamus. Alias, voluptas! Asperiores non molestias enim, mollitia eos dolor ab, totam quos quaerat eum et consequatur fugit explicabo.
-                </p>
+                <p>{description || "Deskripsi singkat kegiatan..."}</p>
               </div>
             </div>
           </div>

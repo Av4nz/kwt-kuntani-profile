@@ -1,7 +1,7 @@
 import React from "react";
 import KegiatanCard from "../ui/KegiatanCard";
 
-const KegiatanPageSection = () => {
+const KegiatanPageSection = ({allKegiatan}) => {
   return (
     <section className="py-20 px-4 lg:px-16 bg-white">
       <div className="max-w-[1240px] mx-auto">
@@ -9,9 +9,13 @@ const KegiatanPageSection = () => {
           Kegiatan
         </h2>
         <div className="grid md:grid-cols-2 gap-4">
-            <KegiatanCard />
-            <KegiatanCard />
-            <KegiatanCard />
+          {allKegiatan.map((kegiatan) => (
+            <KegiatanCard key={kegiatan.slug} image={kegiatan.image}>
+              <h3>{kegiatan.title}</h3>
+              <span>{kegiatan.date}</span>
+              <p>{kegiatan.description}</p>
+            </KegiatanCard>
+          ))}
         </div>
       </div>
     </section>
