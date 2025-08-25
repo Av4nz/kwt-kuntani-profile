@@ -20,15 +20,7 @@ const TentangSection = ({ pengurusList }) => {
           </div>
           <div className="md:flex md:flex-col">
             <p className="text-lg text-gray-800 text-justify">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Recusandae consectetur error sit, perferendis incidunt fugit ipsum
-              quibusdam amet consequatur accusamus. Voluptatibus consectetur
-              vitae natus atque nam, qui rerum non sit minima harum et enim ut
-              deleniti vero ducimus eius officiis earum dignissimos autem
-              reprehenderit laudantium? Tempora excepturi illum sit porro. Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Neque quia
-              delectus explicabo dicta exercitationem quos obcaecati architecto
-              sit perspiciatis impedit?
+              Kelompok Wanita Tani "Rukun Tani" (KWT KUNTANI) bergerak di bidang pengolahan hasil-hasil pertanian, pemanfaatan dan mengolah lahan dengan tanaman sayur mayur serta mengembangkan peternakan di wilayah Padukuhan Manukan. KWT KUNTANI berdiri di Padukuhan Manukan, Condongcatur, Depok, Sleman pada tanggal 13 April 2016. Kami memiliki cita-cita untuk profesionalisme anggota dalam mengelola hasil pertanian dan peternakan. Kami juga ingin mengolah lahan pekarangan dan sawah, menyediakan sarana pertanian yang dibutuhkan, dan membantu anggota menciptakan produk yang kreatif dan sehat. Kami juga berupaya memasarkan hasil pertanian secara kolektif dan menjalin kerjasama dengan berbagai pihak terkait.
             </p>
           </div>
         </div>
