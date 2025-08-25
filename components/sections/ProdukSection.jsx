@@ -7,21 +7,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import ProductCard from "../ui/ProductCard";
-import Image1 from "@/public/images/static/produk/produk_kangkung.webp";
-import Image2 from "@/public/images/static/produk/produk_kacang_panjang.webp";
-import Image3 from "@/public/images/static/produk/produk_daun_pohpohan.webp";
-import Image4 from "@/public/images/static/produk/produk_sawi.webp";
 
-const ProdukSection = () => {
-  const products = [
-    { image: Image1, productName: "Kangkung" },
-    { image: Image2, productName: "Kacang Panjang" },
-    { image: Image3, productName: "Daun Pohpohan" },
-    { image: Image4, productName: "Sawi" },
-    { image: Image4, productName: "Sawi" },
-    { image: Image4, productName: "Sawi" },
-  ];
-
+const ProdukSection = ({ produkList }) => {
   return (
     <section id="produk" className="py-20 px-4 lg:px-16 bg-slate-100">
       <div className="max-w-[1240px] mx-auto">
@@ -57,18 +44,22 @@ const ProdukSection = () => {
           }}
           className="produk-swiper"
         >
-          {products.map((product, index) => (
-            <SwiperSlide key={index} className="pb-12">
+          {produkList.map((produk) => (
+            <SwiperSlide key={produk.slug} className="pb-12">
               <ProductCard
-                image={product.image}
-                productName={product.productName}
+                image={produk.image}
+                productName={produk.name}
+                isUnggulan={produk.unggulan}
               />
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
       <div className="text-center mt-8">
-        <ButtonPrimary label={"Pesan Sekarang"} url="https://wa.me/6282314954133"></ButtonPrimary>
+        <ButtonPrimary
+          label={"Pesan Sekarang"}
+          url="https://wa.me/6282314954133"
+        ></ButtonPrimary>
       </div>
     </section>
   );

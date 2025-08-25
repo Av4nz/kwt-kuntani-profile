@@ -15,6 +15,7 @@ const KegiatanCard = ({ image, children }) => {
         <div className="w-full h-[60%]">
           <Image
             src={image}
+            alt={title}
             width={500}
             height={500}
             className="w-full h-full bg-center bg-cover object-cover object-center"

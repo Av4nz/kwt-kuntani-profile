@@ -1,4 +1,5 @@
 import React from "react";
+import { FaFacebookF, FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -23,7 +24,18 @@ const Footer = () => {
           </div>
           <div className="flex flex-col md:pt-12 md:px-12 flex-nowrap">
             <h3 className="md:text-3xl text-2xl font-semibold mb-2">Kontak</h3>
-            <div>WhatsApp</div>
+            <div className="flex flex-row gap-2">
+              <div className="bg-white p-2 rounded">
+                <a href="https://www.facebook.com/share/g/1FSQ92D9RX/">
+                  <FaFacebookF className="text-black" size={25} />
+                </a>
+              </div>
+              <div className="bg-white p-2 rounded">
+                <a href="https://wa.me/6282314954133">
+                  <FaWhatsapp className="text-black" size={25} />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

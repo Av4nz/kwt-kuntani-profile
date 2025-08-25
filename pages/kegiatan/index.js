@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import { getAllKegiatan } from "@/lib/kegiatan";
 import KegiatanPageSection from "@/components/sections/KegiatanPageSection";
 
@@ -14,9 +15,8 @@ export async function getStaticProps() {
           year: "numeric",
         })
       : null,
-      image: item.image || null,
+    image: item.image || null,
   }));
-
 
   return {
     props: {
@@ -25,11 +25,20 @@ export async function getStaticProps() {
   };
 }
 
-const index = ({allKegiatan}) => {
+const index = ({ allKegiatan }) => {
   return (
-    <div className="text-black">
-      <KegiatanPageSection allKegiatan={allKegiatan}/>
-    </div>
+    <>
+      <Head>
+        <title>Kegiatan KWT Kuntani</title>
+        <meta
+          name="description"
+          content="Kegiatan-kegiatan yang dilakukan oleh KWT Kuntani dalam rangka pemberdayaan masyarakat dan pengembangan pertanian."
+        />
+      </Head>
+      <main className="text-black">
+        <KegiatanPageSection allKegiatan={allKegiatan} />
+      </main>
+    </>
   );
 };
 

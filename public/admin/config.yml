@@ -72,3 +72,13 @@ collections:
               required: true,
             }
           - { label: "Foto", name: "foto", widget: "image", required: true }
+  - name: "produk"
+    label: "Produk"
+    folder: "contents/produk"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nama Produk", name: "name", widget: "string", required: true }
+      - { label: "Gambar", name: "image", widget: "image", required: true }
+      - { label: "Produk Unggulan?", name: "unggulan", widget: "boolean", default: false }
+      

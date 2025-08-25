@@ -34,6 +34,7 @@ const Navbar = () => {
           spy={true}
           smooth={true}
           duration={500}
+          offset={-50}
           className="hover:underline cursor-pointer"
           onClick={() => setNav(false)}
         >
@@ -77,7 +78,7 @@ const Navbar = () => {
 
       <div
         className={`md:hidden fixed left-0 w-full transition-all duration-500 ease-in-out ${
-          nav ? "top-[60px] opacity-100" : "top-[-100%] opacity-0"
+          nav ? "top-[80px] opacity-100" : "top-[-100%] opacity-0"
         } `}
       >
         <ul className="bg-primary-700 text-white">

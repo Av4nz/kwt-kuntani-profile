@@ -11,7 +11,7 @@ const CarouselSection = () => {
   const images = [Hero1, Hero2, Hero3];
 
   return (
-    <section className="relative h-[calc(100vh-60px)] md:h-[700px] w-full overflow-hidden flex justify-center items-center">
+    <section className="relative h-[calc(100vh-80px)] md:h-[700px] w-full overflow-hidden flex justify-center items-center">
       <Carousel
         indicators={false}
         leftControl="."
