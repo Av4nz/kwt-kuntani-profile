@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 import Image from "next/image";
+import ReactMarkdown from "react-markdown";
 
 export async function getStaticPaths() {
   const files = fs.readdirSync("contents/kegiatan");
@@ -45,7 +46,9 @@ export default function Kegiatan({ frontmatter, content }) {
         height={400}
         className="my-4"
       />
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <div className="prose max-w-none">
+        <ReactMarkdown>{content}</ReactMarkdown>
+      </div>
     </div>
   );
 }
