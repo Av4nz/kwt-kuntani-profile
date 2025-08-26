@@ -5,8 +5,8 @@ const ProductCard = ({ image, productName, isUnggulan }) => {
   return (
     <div className="shadow rounded-2xl w-full h-[28rem] sm:h-[20rem] lg:h-[20rem] relative overflow-hidden">
       {isUnggulan && (
-        <div className="absolute -left-10 top-7 bg-red-600 text-white py-2 px-12 transform -rotate-45 z-10 shadow-lg">
-          <span className="font-semibold text-yellow-300">
+        <div className="absolute -left-18 top-5 bg-red-600 text-white py-4 px-4 transform -rotate-45 z-10 shadow-lg">
+          <span className="font-semibold text-black bg-yellow-300 py-1 px-16">
             Unggulan
           </span>
         </div>
