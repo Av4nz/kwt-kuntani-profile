@@ -1,5 +1,5 @@
 ---
 name: Gambas
-image: /images/uploads/gambas.jpg
+image: /images/uploads/gambas.webp
 unggulan: false
 ---
