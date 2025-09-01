@@ -3,6 +3,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import ButtonWhite from "../ui/ButtonWhite";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -68,6 +69,8 @@ const Navbar = () => {
             {renderNavLink(item)}
           </li>
         ))}
+        <ButtonWhite label="Login" link="/admin" />
+
       </ul>
 
       <div className="md:hidden flex items-center" onClick={toggleNav}>
@@ -90,6 +93,10 @@ const Navbar = () => {
               {renderNavLink(item)}
             </li>
           ))}
+          <li className="py-6 px-6 border-b border-white last:border-b-0">
+            <ButtonWhite label="Login" link="/admin" />
+          </li>
+          
         </ul>
       </div>
     </nav>

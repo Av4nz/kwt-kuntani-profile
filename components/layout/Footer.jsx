@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="w-full md:max-h-[400px]">
             <div className="w-full h-[350px] md:h-[350px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.101638339227!2d110.39397221148594!3d-7.779047092208184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59c3fef5beed%3A0x2b43a1fc07e66e4c!2sARF%20MUSIC%20PRODUCTION%20(RECORDING%20STUDIO)!5e0!3m2!1sid!2sid!4v1755323157781!5m2!1sid!2sid"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.3984241747967!2d110.39727877595405!3d-7.747495576813814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a59ed439103cf%3A0xae0b0a5a5562014e!2sKWT%20(Kelompok%20Wanita%20Tani)%20Kuntani%20Manukan%20Condongcatur!5e0!3m2!1sen!2sid!4v1756738038210!5m2!1sen!2sid"
                 className="w-full h-full"
                 style={{ border: 0 }}
                 allowfullscreen=""
