@@ -1,6 +1,6 @@
 ---
-title: Kerja Bakti Padukuhan Manukan
-date: 2025-08-24T00:00:00.000+07:00
-image: /images/uploads/kegiatan2.jpg
+title: Kerja Bakti KWT Kuntani
+date: 2025-07-26
+image: /images/uploads/img_1776_11zon.webp
 ---
-**Test lagi.** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Pada tanggal 26 Juli 2025, KWT Kuntani melaksanakan kerja bakti untuk membersihkan dan menata kawasan lahan KWT. Kegiatan ini dibersamai oleh beberapa bapak-bapak warga sekitar.
