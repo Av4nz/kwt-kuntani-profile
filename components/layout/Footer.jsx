@@ -31,7 +31,7 @@ const Footer = () => {
                 </a>
               </div>
               <div className="bg-white p-2 rounded">
-                <a href="https://wa.me/6282314954133">
+                <a href="http://wa.me/6285643965751">
                   <FaWhatsapp className="text-black" size={25} />
                 </a>
               </div>

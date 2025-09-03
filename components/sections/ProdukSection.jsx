@@ -58,7 +58,7 @@ const ProdukSection = ({ produkList }) => {
       <div className="text-center mt-8">
         <ButtonPrimary
           label={"Pesan Sekarang"}
-          url="https://wa.me/6282314954133"
+          url="http://wa.me/6285643965751"
         ></ButtonPrimary>
       </div>
     </section>
