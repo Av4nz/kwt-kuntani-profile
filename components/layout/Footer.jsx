@@ -45,7 +45,7 @@ const Footer = () => {
           <p className="text-sm font-light">
             &copy; {new Date().getFullYear()} KWT Kuntani. All rights reserved.
             Developed by{" "}
-            <a href="" className="hover:text-blue-400">
+            <a className="hover:text-blue-400">
               Tim KKN-M UNY
             </a>
           </p>
