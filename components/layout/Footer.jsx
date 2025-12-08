@@ -15,6 +15,7 @@ const Footer = () => {
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
+                alt="KWT Kuntani Location"
               ></iframe>
             </div>
           </div>
